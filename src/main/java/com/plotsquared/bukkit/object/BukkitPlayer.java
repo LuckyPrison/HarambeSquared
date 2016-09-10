@@ -9,7 +9,8 @@ import com.intellectualcrafters.plot.util.PlotWeather;
 import com.intellectualcrafters.plot.util.StringMan;
 import com.intellectualcrafters.plot.util.UUIDHandler;
 import com.plotsquared.bukkit.util.BukkitUtil;
-import com.ulfric.lib.coffee.npermission.Permissions;
+import com.ulfric.lib.api.hook.Hooks;
+
 import org.bukkit.Effect;
 import org.bukkit.GameMode;
 import org.bukkit.WeatherType;
@@ -116,7 +117,7 @@ public class BukkitPlayer extends PlotPlayer {
 	{
 		if (this.offline)
 		{
-			return Permissions.getEntity(this.uuid).hasPermission(permission);
+			Hooks.PERMISSIONS.user(this.uuid).hasPermission(permission);
 		}
 		return this.player.hasPermission(permission);
 	}
