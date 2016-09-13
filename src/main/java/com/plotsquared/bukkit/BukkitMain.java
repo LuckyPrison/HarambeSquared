@@ -1,28 +1,5 @@
 package com.plotsquared.bukkit;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
-import java.util.UUID;
-
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.Location;
-import org.bukkit.OfflinePlayer;
-import org.bukkit.World;
-import org.bukkit.WorldCreator;
-import org.bukkit.command.PluginCommand;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.LivingEntity;
-import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
-import org.bukkit.generator.ChunkGenerator;
-import org.bukkit.metadata.MetadataValue;
-import org.bukkit.plugin.Plugin;
-import org.bukkit.plugin.java.JavaPlugin;
-
 import com.intellectualcrafters.configuration.ConfigurationSection;
 import com.intellectualcrafters.plot.IPlotMain;
 import com.intellectualcrafters.plot.PS;
@@ -90,7 +67,27 @@ import com.plotsquared.bukkit.uuid.FileUUIDHandler;
 import com.plotsquared.bukkit.uuid.LowerOfflineUUIDWrapper;
 import com.plotsquared.bukkit.uuid.OfflineUUIDWrapper;
 import com.plotsquared.bukkit.uuid.SQLUUIDHandler;
-import com.ulfric.lib.api.task.Tasks;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.Location;
+import org.bukkit.OfflinePlayer;
+import org.bukkit.World;
+import org.bukkit.command.PluginCommand;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.LivingEntity;
+import org.bukkit.entity.Player;
+import org.bukkit.event.Listener;
+import org.bukkit.generator.ChunkGenerator;
+import org.bukkit.metadata.MetadataValue;
+import org.bukkit.plugin.Plugin;
+import org.bukkit.plugin.java.JavaPlugin;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+import java.util.UUID;
 
 public final class BukkitMain extends JavaPlugin implements Listener, IPlotMain {
 
@@ -126,7 +123,6 @@ public final class BukkitMain extends JavaPlugin implements Listener, IPlotMain 
 	@Override
 	public void onEnable()
 	{
-		Tasks.run(() -> Bukkit.createWorld(new WorldCreator("plots")));
 		this.getServer().getName();
 		new PS(this, "Bukkit");
 	}
